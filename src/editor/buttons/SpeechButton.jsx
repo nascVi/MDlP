@@ -6,11 +6,11 @@ export default class SpeechButton extends Button {
 	constructor (props) {
 		super(props)
 		if (window.hasOwnProperty('webkitSpeechRecognition')) {
-		}
 		this.recognition = new webkitSpeechRecognition()
 		this.recognition.lang = 'fr-FR'
 		this.recognition.continious = true
 		this.recognition.interimResults = false
+		}
 	}
 
 	render (props, state) {
@@ -35,7 +35,7 @@ export default class SpeechButton extends Button {
 			this.recognition.start()
 			this.setState({listening: true})
 			this.recognition.onresult = (e) => {
-				let result = e.result.item(e.resultIndex)
+				let result = e.results.item(e.resultIndex)
 				if(result.isFinal === true) {
 					let transcript = result.item(0).transcript
 					if (this.shouldCapitalize()) {
@@ -53,7 +53,7 @@ export default class SpeechButton extends Button {
 		let startSentence = this.props.editor.getDoc().getRange({
 			line: cursor.line,
 			ch: 0
-		}, cursor).trim().endsWidth('.')
+		}, cursor).trim().endsWith('.')
 		if (cursor.ch === 0 || startSentence) {
 			return true
 		}
