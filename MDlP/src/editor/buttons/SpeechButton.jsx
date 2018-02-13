@@ -45,7 +45,7 @@ export default class SpeechButton extends Button {
 				}
 			}
 			editor.focus()
-		}	
+		}
 	}
 
 	shouldCapitalize () {
