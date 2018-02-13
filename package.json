@@ -11,7 +11,7 @@
     "dev": "preact watch --template src/index.ejs"
   },
   "keywords": [],
-  "author": "Zouhir <zouhir@zouhir.org>",
+  "author": "nascvi",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^4.5.0",
@@ -25,6 +25,9 @@
     "sass-loader": "^6.0.6"
   },
   "dependencies": {
+    "codemirror": "^5.34.0",
+    "linkstate": "^1.1.1",
+    "marked": "^0.3.12",
     "preact": "^8.2.5",
     "preact-compat": "^3.17.0",
     "preact-habitat": "^3.1.0",
